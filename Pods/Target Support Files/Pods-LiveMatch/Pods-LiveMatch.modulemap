@@ -1,0 +1,6 @@
+framework module Pods_LiveMatch {
+  umbrella header "Pods-LiveMatch-umbrella.h"
+
+  export *
+  module * { export * }
+}

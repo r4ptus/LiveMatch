@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-LiveMatch/Pods-LiveMatch-frameworks.sh
+${BUILT_PRODUCTS_DIR}/LeagueAPI/LeagueAPI.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

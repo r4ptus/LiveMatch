@@ -1,0 +1,26 @@
+PODS:
+  - LeagueAPI (2.0.0)
+  - SDWebImage (5.0.4):
+    - SDWebImage/Core (= 5.0.4)
+  - SDWebImage/Core (5.0.4)
+  - SwiftLint (0.32.0)
+
+DEPENDENCIES:
+  - LeagueAPI
+  - SDWebImage
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - LeagueAPI
+    - SDWebImage
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  LeagueAPI: 92c3f43753c3f07c31810b0181b006c9f6f32eea
+  SDWebImage: c739016e4bdf0a4a1f9a04b5e0385395ad63a282
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
+
+PODFILE CHECKSUM: 321e69c632c47faa06bb75a1faa33d55c0f7303a
+
+COCOAPODS: 1.7.1

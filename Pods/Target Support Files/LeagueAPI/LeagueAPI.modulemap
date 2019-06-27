@@ -1,0 +1,6 @@
+framework module LeagueAPI {
+  umbrella header "LeagueAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}
