@@ -7,20 +7,29 @@
 //
 
 import UIKit
-import LeagueAPI
 import SDWebImage
+import LeagueAPI
 
-class ViewController: UIViewController {
-
-    @IBOutlet var imageView: UIImageView!
-
-    
+class ViewController: UIViewController, UISearchBarDelegate {
+    var summoner: Summoner?
+    var gameInfo: GameInfo?
+    @IBOutlet var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
+        searchBar.delegate = self
     }
 
-
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("test")
+        ApiCalls.getLiveMatch(summonerName: searchBar.text!, viewController: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gdvc = segue.destination as? GameDataViewController {
+            gdvc.gameInfo = gameInfo
+        }
+        if let spvc = segue.destination as? SummonerProfileViewController {
+            spvc.summoner = summoner
+        }
+    }
 }
-

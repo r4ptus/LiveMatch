@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		042C34B0CF850CA6567B484F /* Pods_LiveMatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C5FDF26257C69F85F99406 /* Pods_LiveMatchUITests.framework */; };
-		85DFCD5822C4BCDE006F440E /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD5722C4BCDE006F440E /* ApiCalls.swift */; };
-		85DFCD5922C4BCDE006F440E /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD5722C4BCDE006F440E /* ApiCalls.swift */; };
+		851E5FD422CCCD5300C83770 /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E5FD322CCCD5300C83770 /* ApiCalls.swift */; };
+		85DFCD5E22C4D1D3006F440E /* GameDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */; };
+		85DFCD5F22C4D1D3006F440E /* GameDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */; };
+		85DFCD6022C4D1D3006F440E /* GameDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */; };
+		85DFCD6222C4D235006F440E /* PlayerDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD6122C4D235006F440E /* PlayerDataViewController.swift */; };
+		85DFCD6322C4D235006F440E /* PlayerDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD6122C4D235006F440E /* PlayerDataViewController.swift */; };
+		85DFCD6422C4D235006F440E /* PlayerDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD6122C4D235006F440E /* PlayerDataViewController.swift */; };
+		85DFCD6622C4D246006F440E /* SummonerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD6522C4D246006F440E /* SummonerProfileViewController.swift */; };
+		85DFCD6722C4D246006F440E /* SummonerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD6522C4D246006F440E /* SummonerProfileViewController.swift */; };
+		85DFCD6822C4D246006F440E /* SummonerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD6522C4D246006F440E /* SummonerProfileViewController.swift */; };
 		85F66CA722C0C21F00398107 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CA622C0C21F00398107 /* AppDelegate.swift */; };
 		85F66CA922C0C21F00398107 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CA822C0C21F00398107 /* ViewController.swift */; };
 		85F66CAC22C0C21F00398107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F66CAA22C0C21F00398107 /* Main.storyboard */; };
@@ -45,7 +53,10 @@
 		54359822D07582DE9FC44270 /* Pods-LiveMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveMatch.debug.xcconfig"; path = "Target Support Files/Pods-LiveMatch/Pods-LiveMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		6572CDA32215FE11FC7EFDF6 /* Pods-LiveMatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveMatchUITests.release.xcconfig"; path = "Target Support Files/Pods-LiveMatchUITests/Pods-LiveMatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		695B95D990DAB353A571819E /* Pods_LiveMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		85DFCD5722C4BCDE006F440E /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
+		851E5FD322CCCD5300C83770 /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
+		85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataViewController.swift; sourceTree = "<group>"; };
+		85DFCD6122C4D235006F440E /* PlayerDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataViewController.swift; sourceTree = "<group>"; };
+		85DFCD6522C4D246006F440E /* SummonerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerProfileViewController.swift; sourceTree = "<group>"; };
 		85F66CA322C0C21F00398107 /* LiveMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F66CA622C0C21F00398107 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85F66CA822C0C21F00398107 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +134,10 @@
 				85F66CAD22C0C22100398107 /* Assets.xcassets */,
 				85F66CAF22C0C22100398107 /* LaunchScreen.storyboard */,
 				85F66CB222C0C22100398107 /* Info.plist */,
-				85DFCD5722C4BCDE006F440E /* ApiCalls.swift */,
+				85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */,
+				85DFCD6122C4D235006F440E /* PlayerDataViewController.swift */,
+				85DFCD6522C4D246006F440E /* SummonerProfileViewController.swift */,
+				851E5FD322CCCD5300C83770 /* ApiCalls.swift */,
 			);
 			path = LiveMatch;
 			sourceTree = "<group>";
@@ -181,6 +195,7 @@
 				85F66CA022C0C21E00398107 /* Frameworks */,
 				85F66CA122C0C21E00398107 /* Resources */,
 				CF7B964555822AE5DB22575F /* [CP] Embed Pods Frameworks */,
+				851E5FD222CCB2A900C83770 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -300,6 +315,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		851E5FD222CCB2A900C83770 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		93F2D29FA393D62116573AA5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,7 +423,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				85F66CA922C0C21F00398107 /* ViewController.swift in Sources */,
-				85DFCD5822C4BCDE006F440E /* ApiCalls.swift in Sources */,
+				85DFCD6622C4D246006F440E /* SummonerProfileViewController.swift in Sources */,
+				85DFCD5E22C4D1D3006F440E /* GameDataViewController.swift in Sources */,
+				85DFCD6222C4D235006F440E /* PlayerDataViewController.swift in Sources */,
+				851E5FD422CCCD5300C83770 /* ApiCalls.swift in Sources */,
 				85F66CA722C0C21F00398107 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,8 +435,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85DFCD5922C4BCDE006F440E /* ApiCalls.swift in Sources */,
+				85DFCD6722C4D246006F440E /* SummonerProfileViewController.swift in Sources */,
 				85F66CBC22C0C22100398107 /* LiveMatchTests.swift in Sources */,
+				85DFCD5F22C4D1D3006F440E /* GameDataViewController.swift in Sources */,
+				85DFCD6322C4D235006F440E /* PlayerDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DFCD6822C4D246006F440E /* SummonerProfileViewController.swift in Sources */,
+				85DFCD6422C4D235006F440E /* PlayerDataViewController.swift in Sources */,
+				85DFCD6022C4D1D3006F440E /* GameDataViewController.swift in Sources */,
 				85F66CC722C0C22100398107 /* LiveMatchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
