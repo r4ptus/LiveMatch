@@ -13,7 +13,9 @@ import LeagueAPI
 class ViewController: UIViewController, UISearchBarDelegate {
     var summoner: Summoner?
     var gameInfo: GameInfo?
+    
     @IBOutlet var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         print("test")
         ApiCalls.getLiveMatch(summonerName: searchBar.text!, viewController: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let gdvc = segue.destination as? GameDataViewController {
             gdvc.gameInfo = gameInfo
