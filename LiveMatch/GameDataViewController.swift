@@ -16,6 +16,7 @@ class GameDataViewController: UIViewController {
     var teamRed: [Participant]?
     var bannedCBlue: [BannedChampion]?
     var bannedCRed: [BannedChampion]?
+    var participantToPass: Participant?
     
     @IBOutlet var tableView: UITableView!
     
@@ -33,13 +34,16 @@ class GameDataViewController: UIViewController {
         
         for champion in gameInfo!.bannedChampions {
             if champion.teamId == 100 {
-                bannedCBlue?.append(champion)
+                if champion.championId.value != -1 {
+                    bannedCBlue?.append(champion)
+                }
             }
             else {
-                bannedCRed?.append(champion)
+                if champion.championId.value != -1 {
+                    bannedCRed?.append(champion)
+                }
             }
         }
-        
         for participant in gameInfo!.participants {
             if participant.teamId == 100 {
                 teamBlue?.append(participant)
@@ -49,9 +53,10 @@ class GameDataViewController: UIViewController {
             }
         }
     }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if let pdvc = segue.destination as? PlayerDataViewController {
+            pdvc.summoner = participantToPass
+        }
     }
     
 }
@@ -106,56 +111,43 @@ extension GameDataViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell =  tableView.dequeueReusableCell(withIdentifier: "BannedChampionsCell", for: indexPath) as! BannedChampionsTableViewCell
+            let bannedChampionsImageViews: [UIImageView] = [cell.champion1,cell.champion2,cell.champion3,cell.champion4,cell.champion5]
             if indexPath.row == 0 {
                 cell.backgroundColor = UIColor.blue
+                for (index,champion) in bannedCBlue!.enumerated(){
+                    bannedChampionsImageViews[index].sd_setImage(with: URL(string: ApiCalls.champions[champion.championId]!.images!.square.url), placeholderImage: UIImage(named: "placeholder.png"))
+                }
             }
             else if indexPath.row == 1{
                 cell.backgroundColor = UIColor.red
+                for (index,champion) in bannedCRed!.enumerated(){
+                    bannedChampionsImageViews[index].sd_setImage(with: URL(string: ApiCalls.champions[champion.championId]!.images!.square.url), placeholderImage: UIImage(named: "placeholder.png"))
+                }
             }
             return cell
         }
         else if indexPath.section == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as? TeamTableViewCell else { return TeamTableViewCell()}
             cell.name.text = teamRed![indexPath.row].summonerName
-            ApiCalls.league.getProfileIcon(by: teamRed![indexPath.row].profileIconId) { (profileIcon, errorMsg) in
-                if let profileIcon = profileIcon {
-                    cell.icon.sd_setImage(with: URL(string: profileIcon.profileIcon.url), placeholderImage: UIImage(named: "placeholder.png"))
-                }
-                else {
-                    print("Request failed cause: \(errorMsg ?? "No error description")")
-                }
-            }
-            ApiCalls.league.getChampionDetails(by: teamRed![indexPath.row].championId, handler: { (championDetails, errorMsg) in
-                if let championDetails = championDetails {
-                    cell.champion.sd_setImage(with: URL(string: championDetails.images!.square.url), placeholderImage: UIImage(named: "placeholder.png"))
-                }
-                else {
-                    print("Request failed cause: \(errorMsg ?? "No error description")")
-                }
-            })
-            
+            cell.icon.sd_setImage(with: URL(string: ApiCalls.profileIcons[teamRed![indexPath.row].profileIconId]!.profileIcon.url), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.champion.sd_setImage(with: URL(string: ApiCalls.champions[teamRed![indexPath.row].championId]!.images!.square.url), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.summoner = teamRed![indexPath.row]
             return cell
         }
         else {
             guard let cell =  tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath) as? TeamTableViewCell else { return TeamTableViewCell()}
             cell.name.text = teamBlue![indexPath.row].summonerName
-            ApiCalls.league.getProfileIcon(by: teamBlue![indexPath.row].profileIconId) { (profileIcon, errorMsg) in
-                if let profileIcon = profileIcon {
-                    cell.icon.sd_setImage(with: URL(string: profileIcon.profileIcon.url), placeholderImage: UIImage(named: "placeholder.png"))
-                }
-                else {
-                    print("Request failed cause: \(errorMsg ?? "No error description")")
-                }
-            }
-            ApiCalls.league.getChampionDetails(by: teamBlue![indexPath.row].championId, handler: { (championDetails, errorMsg) in
-                if let championDetails = championDetails {
-                    cell.champion.sd_setImage(with: URL(string: championDetails.images!.square.url), placeholderImage: UIImage(named: "placeholder.png"))
-                }
-                else {
-                    print("Request failed cause: \(errorMsg ?? "No error description")")
-                }
-            })
+            cell.icon.sd_setImage(with: URL(string: ApiCalls.profileIcons[teamBlue![indexPath.row].profileIconId]!.profileIcon.url), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.champion.sd_setImage(with: URL(string: ApiCalls.champions[teamBlue![indexPath.row].championId]!.images!.square.url), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.summoner = teamBlue![indexPath.row]
             return cell
         }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let indexPath = tableView.indexPathForSelectedRow!
+        guard let currentCell = tableView.cellForRow(at: indexPath)! as? TeamTableViewCell else {return}
+        participantToPass = currentCell.summoner!
+        performSegue(withIdentifier: "segueToPlayerDataView", sender: self)
     }
 }

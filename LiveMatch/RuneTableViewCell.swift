@@ -1,20 +1,16 @@
 //
-//  TeamTableViewCell.swift
+//  RuneTableViewCell.swift
 //  LiveMatch
 //
-//  Created by ema on 06.07.19.
+//  Created by ema on 08.07.19.
 //  Copyright © 2019 raptus. All rights reserved.
 //
 
 import UIKit
-import LeagueAPI
 
-class TeamTableViewCell: UITableViewCell {
-    @IBOutlet var champion: UIImageView!
-    @IBOutlet var icon: UIImageView!
+class RuneTableViewCell: UITableViewCell {
+    @IBOutlet var runeImage: UIImageView!
     @IBOutlet var name: UILabel!
-    
-    public var summoner: Participant?
     
     override func awakeFromNib() {
         super.awakeFromNib()

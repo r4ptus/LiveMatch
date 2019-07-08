@@ -1,20 +1,20 @@
 //
-//  TeamTableViewCell.swift
+//  RankedTableViewCell.swift
 //  LiveMatch
 //
-//  Created by ema on 06.07.19.
+//  Created by ema on 08.07.19.
 //  Copyright © 2019 raptus. All rights reserved.
 //
 
 import UIKit
-import LeagueAPI
 
-class TeamTableViewCell: UITableViewCell {
-    @IBOutlet var champion: UIImageView!
-    @IBOutlet var icon: UIImageView!
-    @IBOutlet var name: UILabel!
+class RankedTableViewCell: UITableViewCell {
+    @IBOutlet var rankedImage: UIImageView!
+    @IBOutlet var tier: UILabel!
+    @IBOutlet var leaguePoints: UILabel!
+    @IBOutlet var wins: UILabel!
+    @IBOutlet var loses: UILabel!
     
-    public var summoner: Participant?
     
     override func awakeFromNib() {
         super.awakeFromNib()

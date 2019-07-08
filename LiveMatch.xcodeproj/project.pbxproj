@@ -11,6 +11,9 @@
 		851E5FD422CCCD5300C83770 /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E5FD322CCCD5300C83770 /* ApiCalls.swift */; };
 		859212EE22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212ED22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift */; };
 		859212F022D0BBE60081DD67 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212EF22D0BBE60081DD67 /* TeamTableViewCell.swift */; };
+		859F0EF622D342E8003C4F40 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF522D342E8003C4F40 /* ProgressHUD.swift */; };
+		859F0EF822D36262003C4F40 /* RankedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */; };
+		859F0EFA22D36272003C4F40 /* RuneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */; };
 		85C22D2222CE19BB00AEEE0E /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C22D2122CE19BB00AEEE0E /* CardView.xib */; };
 		85C22D2422CE207900AEEE0E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C22D2322CE207900AEEE0E /* CardView.swift */; };
 		85DFCD5E22C4D1D3006F440E /* GameDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */; };
@@ -60,6 +63,9 @@
 		851E5FD322CCCD5300C83770 /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
 		859212ED22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannedChampionsTableViewCell.swift; sourceTree = "<group>"; };
 		859212EF22D0BBE60081DD67 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		859F0EF522D342E8003C4F40 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedTableViewCell.swift; sourceTree = "<group>"; };
+		859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuneTableViewCell.swift; sourceTree = "<group>"; };
 		85C22D2122CE19BB00AEEE0E /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		85C22D2322CE207900AEEE0E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +156,9 @@
 				85C22D2322CE207900AEEE0E /* CardView.swift */,
 				859212ED22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift */,
 				859212EF22D0BBE60081DD67 /* TeamTableViewCell.swift */,
+				859F0EF522D342E8003C4F40 /* ProgressHUD.swift */,
+				859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */,
+				859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */,
 			);
 			path = LiveMatch;
 			sourceTree = "<group>";
@@ -443,7 +452,10 @@
 				85DFCD6222C4D235006F440E /* PlayerDataViewController.swift in Sources */,
 				851E5FD422CCCD5300C83770 /* ApiCalls.swift in Sources */,
 				859212F022D0BBE60081DD67 /* TeamTableViewCell.swift in Sources */,
+				859F0EF622D342E8003C4F40 /* ProgressHUD.swift in Sources */,
+				859F0EF822D36262003C4F40 /* RankedTableViewCell.swift in Sources */,
 				85F66CA722C0C21F00398107 /* AppDelegate.swift in Sources */,
+				859F0EFA22D36272003C4F40 /* RuneTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

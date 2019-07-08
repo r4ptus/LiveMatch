@@ -30,15 +30,7 @@ class SummonerProfileViewController: UIViewController {
         soloQRank.queueType.text = "Solo Q"
         flex3Rank.queueType.text = "Flex 3"
         
-        ApiCalls.league.getProfileIcon(by: summoner!.iconId) { (profileIcon, errorMsg) in
-            if let profileIcon = profileIcon {
-                print("Success!")
-                self.summonerIcon.sd_setImage(with: URL(string: profileIcon.profileIcon.url), placeholderImage: UIImage(named: "placeholder.png"))
-            }
-            else {
-                print("Request failed cause: \(errorMsg ?? "No error description")")
-            }
-        }
+        summonerIcon.sd_setImage(with: URL(string: ApiCalls.profileIcons[summoner!.iconId]!.profileIcon.url), placeholderImage: UIImage(named: "placeholder.png"))
         
         ApiCalls.getRankedStats(summonerId: summoner!.id, viewController: self)
     }    

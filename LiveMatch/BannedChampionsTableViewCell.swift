@@ -15,6 +15,7 @@ class BannedChampionsTableViewCell: UITableViewCell {
     @IBOutlet var champion4: UIImageView!
     @IBOutlet var champion5: UIImageView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
