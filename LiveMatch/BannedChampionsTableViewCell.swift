@@ -14,17 +14,11 @@ class BannedChampionsTableViewCell: UITableViewCell {
     @IBOutlet var champion3: UIImageView!
     @IBOutlet var champion4: UIImageView!
     @IBOutlet var champion5: UIImageView!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }

@@ -19,11 +19,11 @@ enum TableSections: Int {
     case masteries
     case masterie1
     case masterie2
+    case total
 }
 
 class PlayerDataViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
-    
     var summoner: Participant?
     var rankedEntries: [RankedEntry]?
     var soloEntry: Bool = false
@@ -32,42 +32,48 @@ class PlayerDataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        
         self.title = "\(summoner!.summonerName)"
         checkRankedEntry()
-        
         ApiCalls.getRankedStats(summonerId: summoner!.summonerId!, viewController: self)
     }
+    /**
+     checks if player has any ranked entries
+     */
     func checkRankedEntry() {
         guard let rankedEntries = rankedEntries  else { return }
         for entry in rankedEntries {
             switch entry.queue.type {
             case Queue.QueueTypes.RankedSolo5V5:
                 soloEntry = true
-                break
             case Queue.QueueTypes.RankedFlex5V5:
                 flex5Entry = true
-                break
             case Queue.QueueTypes.RankedFlex3V3:
                 flex3Entry = true
-                break
             default:
                 break
             }
         }
     }
 }
-extension PlayerDataViewController: UITableViewDelegate,UITableViewDataSource {
-        func tableView(_ tableView:UITableView, heightForRowAt indexPath:IndexPath)->CGFloat {
+extension PlayerDataViewController: UITableViewDelegate, UITableViewDataSource {
+    /**
+     sets the tableVIew row height
+     */
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 44
         }
+    /**
+     sets the section count for the tableView
+     */
         func numberOfSections(in tableView: UITableView) -> Int {
-            return 8
+            return TableSections.total.rawValue
         }
+    /**
+     sets the height for the section headers
+     */
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             switch section {
             case TableSections.rankedStats.rawValue:
@@ -90,22 +96,25 @@ extension PlayerDataViewController: UITableViewDelegate,UITableViewDataSource {
                 return 0
             }
         }
+    /**
+     sets the numbers of rows in each section
+     */
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             switch section {
             case TableSections.rankedStats.rawValue:
                 return 0
             case TableSections.soloq.rawValue:
-                if(soloEntry){
+                if soloEntry {
                     return 1
                 }
                 return 0
             case TableSections.flex3.rawValue:
-                if(flex3Entry){
+                if flex3Entry {
                     return 1
                 }
                 return 0
             case TableSections.flex5.rawValue:
-                if(flex5Entry){
+                if flex5Entry {
                     return 1
                 }
                 return 0
@@ -121,7 +130,9 @@ extension PlayerDataViewController: UITableViewDelegate,UITableViewDataSource {
                 return 0
             }
         }
-        
+    /**
+     sets the titel for each header
+     */
         func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             switch section {
             case TableSections.rankedStats.rawValue:
@@ -144,78 +155,72 @@ extension PlayerDataViewController: UITableViewDelegate,UITableViewDataSource {
                 return ""
             }
         }
-        
+    /**
+     set each row in the viewtable
+     */
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             switch indexPath.section {
             case TableSections.soloq.rawValue:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RankedCell", for: indexPath) as? RankedTableViewCell else { return RankedTableViewCell()}
-                for entry in rankedEntries! {
-                    if entry.queue.type == Queue.QueueTypes.RankedSolo5V5 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RankedCell", for: indexPath)
+                    as? RankedTableViewCell else { return RankedTableViewCell()}
+                for entry in rankedEntries! where entry.queue.type == Queue.QueueTypes.RankedSolo5V5 {
                         populateRankedCells(cell: cell, entry: entry)
-                    }
                 }
                 return cell
             case TableSections.flex3.rawValue:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RankedCell", for: indexPath) as? RankedTableViewCell else { return RankedTableViewCell()}
-                for entry in rankedEntries! {
-                    if entry.queue.type == Queue.QueueTypes.RankedFlex3V3 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RankedCell", for: indexPath)
+                    as? RankedTableViewCell else { return RankedTableViewCell()}
+                for entry in rankedEntries! where entry.queue.type == Queue.QueueTypes.RankedFlex3V3 {
                         populateRankedCells(cell: cell, entry: entry)
-                    }
                 }
                 return cell
             case TableSections.flex5.rawValue:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RankedCell", for: indexPath) as? RankedTableViewCell else { return RankedTableViewCell()}
-                for entry in rankedEntries! {
-                    if entry.queue.type == Queue.QueueTypes.RankedFlex5V5 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RankedCell", for: indexPath)
+                    as? RankedTableViewCell else { return RankedTableViewCell()}
+                for entry in rankedEntries! where entry.queue.type == Queue.QueueTypes.RankedFlex5V5 {
                         populateRankedCells(cell: cell, entry: entry)
-                    }
                 }
                 return cell
             case TableSections.spells.rawValue:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath) as? RuneTableViewCell else { return RuneTableViewCell()}
-                if indexPath.row == 0 {
-                    cell.runeImage.sd_setImage(with: URL(string: ApiCalls.summonerSpellsDictionary[summoner!.summonerSpell1]!.image.url), placeholderImage: UIImage(named: "placeholder.png"))
-                    cell.name.text = ApiCalls.summonerSpellsDictionary[summoner!.summonerSpell1]!.name
-                }
-                else {
-                    cell.runeImage.sd_setImage(with: URL(string: ApiCalls.summonerSpellsDictionary[summoner!.summonerSpell2]!.image.url), placeholderImage: UIImage(named: "placeholder.png"))
-                    cell.name.text = ApiCalls.summonerSpellsDictionary[summoner!.summonerSpell2]!.name
-                }
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath)
+                    as? RuneTableViewCell else { return RuneTableViewCell()}
+                getSummonerSpells(summonerSpell: indexPath.row == 0 ?
+                    summoner!.summonerSpell1 : summoner!.summonerSpell2, cell: cell)
                 return cell
             case TableSections.masterie1.rawValue:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath) as? RuneTableViewCell else { return RuneTableViewCell()}
-                for runeStage in ApiCalls.runePathesDictionary[summoner!.runePage!.primaryPath]!.runeStages {
-                    for rune in runeStage.runes{
-                        if rune.id == summoner!.runePage?.runeIds[indexPath.row] {
-                            cell.name.text = rune.name
-                            cell.runeImage.sd_setImage(with: URL(string: rune.image.url), placeholderImage: UIImage(named: "placeholder.png"))
-                        }
-                    }
-                }
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath)
+                    as? RuneTableViewCell else { return RuneTableViewCell()}
+                getRunes(runePathId: summoner!.runePage!.primaryPath, index: indexPath.row, cell: cell)
                 return cell
             case TableSections.masterie2.rawValue:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath) as? RuneTableViewCell else { return RuneTableViewCell()}
-                for runeStage in ApiCalls.runePathesDictionary[summoner!.runePage!.secondaryPath]!.runeStages {
-                    for rune in runeStage.runes{
-                        if rune.id == summoner!.runePage?.runeIds[indexPath.row+4] {
-                            cell.name.text = rune.name
-                            cell.runeImage.sd_setImage(with: URL(string: rune.image.url), placeholderImage: UIImage(named: "placeholder.png"))
-                        }
-                    }
-                }
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath)
+                    as? RuneTableViewCell else { return RuneTableViewCell()}
+                getRunes(runePathId: summoner!.runePage!.secondaryPath, index: indexPath.row + 4, cell: cell)
                 return cell
             default:
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath) as? RuneTableViewCell else { return RuneTableViewCell()}
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "RuneCell", for: indexPath)
+                    as? RuneTableViewCell else { return RuneTableViewCell()}
                 return cell
             }
         }
+    /**
+     reload tableView after apiCall
+     */
     public func printRankStats() {
         checkRankedEntry()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
+    /**
+     populates the ranked cell with data
+     
+     - Parameters:
+     - cell: current rankedCell
+     - entry: RankedEntry with ranked data
+     */
     private func populateRankedCells(cell: RankedTableViewCell, entry: RankedEntry) {
+        cell.rankedImage.image = ApiCalls.tierEmblems[entry.tier.tier]
         cell.tier.sizeToFit()
         cell.tier.text = "\(entry.tier.tier) \(entry.leagueInfo.rank)"
         cell.wins.sizeToFit()
@@ -225,5 +230,34 @@ extension PlayerDataViewController: UITableViewDelegate,UITableViewDataSource {
         cell.leaguePoints.sizeToFit()
         cell.leaguePoints.text = "\(entry.leagueInfo.leaguePoints) LP"
     }
+    /**
+     populates runeCell
+     
+     - Parameters:
+     - runePathId: id of the rune path
+     - index: current row index
+     - cell: current runeCell
+     */
+    private func getRunes(runePathId: RunePathId, index: Int, cell: RuneTableViewCell) {
+        for runeStage in ApiCalls.runePathesDictionary[runePathId]!.runeStages {
+            for rune in runeStage.runes where rune.id == summoner!.runePage?.runeIds[index] {
+                cell.name.text = rune.name
+                cell.runeImage.sd_setImage(with: URL(string: rune.image.url),
+                                           placeholderImage: UIImage(named: "placeholder.png"))
+            }
+        }
+    }
+    /**
+     populates the summoner spells
+     
+     - Parameters:
+     - summonerSpell: id of the summoner spell
+     - cell: current runeCell
+     */
+    private func getSummonerSpells(summonerSpell: SummonerSpellId, cell: RuneTableViewCell) {
+        cell.runeImage.sd_setImage(with: URL(string:
+            ApiCalls.summonerSpellsDictionary[summonerSpell]!.image.url),
+                                   placeholderImage: UIImage(named: "placeholder.png"))
+        cell.name.text = ApiCalls.summonerSpellsDictionary[summonerSpell]!.name
+    }
 }
-

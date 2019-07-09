@@ -7,17 +7,14 @@
 //
 
 import UIKit
-@IBDesignable
-class CardView: UIView {
+
+@IBDesignable class CardView: UIView {
     
     @IBOutlet var view: UIView!
     @IBOutlet var queueType: UILabel!
     @IBOutlet var rank: UILabel!
-    @IBOutlet var loses: UILabel!
     @IBOutlet var leaguePoints: UILabel!
-    @IBOutlet var wins: UILabel!
     @IBOutlet var icon: UIImageView!
-    
     @IBInspectable var cornerRadius: Double {
         get {
             return Double(self.layer.cornerRadius)
@@ -57,19 +54,37 @@ class CardView: UIView {
             self.layer.shadowOpacity = newValue
         }
     }
+    /**
+     Initializes a new CardView
+     
+     - Parameters:
+     frame: CGRect
+     
+     - Returns: a CardView
+     */
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
+    /**
+     Initializes a new CardView from code
+     
+     - Parameters:
+     coder aDecoder: NSCoder
+     
+     - Returns: a CardView
+     */
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
+    /**
+     sets up the a new CardView
+     */
     private func commonInit() {
         Bundle.main.loadNibNamed("CardView", owner: self, options: nil)
         addSubview(view)
         view.frame = self.bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        
     }
 }
