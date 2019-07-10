@@ -8,12 +8,17 @@
 
 import Foundation
 import LeagueAPI
-
+///struct with all the functions to get the API data
 struct ApiCalls {
+    ///Dictionary for all champions get champion by ID
     static var champions = [ChampionId: ChampionDetails]()
+    ///Dictionary for all profileicons get icon by ID
     static var profileIcons = [ProfileIconId: ProfileIcon]()
+    ///Dictionary for all runepathes get runepath by ID
     static var runePathesDictionary = [RunePathId: RunePath]()
+    ///Dictionary for all summonerspells get spell by ID
     static var summonerSpellsDictionary = [SummonerSpellId: SummonerSpell]()
+    ///Dictionary for all ranked tiers get uiimage by rankedtier
     static var tierEmblems: [RankedTier.Tiers: UIImage] = [RankedTier.Tiers.Iron: UIImage(named: "emblem_iron")!,
                                                           RankedTier.Tiers.Bronze: UIImage(named: "emblem_bronze")!,
                                                           RankedTier.Tiers.Silver: UIImage(named: "emblem_silver")!,
@@ -26,6 +31,7 @@ struct ApiCalls {
                                                           RankedTier.Tiers.Challenger:
                                                             UIImage(named: "emblem_challenger")!,
                                                           RankedTier.Tiers.Unranked: UIImage(named: "unranked")!]
+    ///Api key
     static let league = LeagueAPI(APIToken: "RGAPI-637e2361-b94d-47e4-8248-0e523acdd9f9")
     /**
      gets the live date for the summoner,
@@ -33,8 +39,8 @@ struct ApiCalls {
      if the summoner isnt in game go to profile
      
      - Parameters:
-     - summonerName: the name of the summoner
-     - viewController: the viewController who calls this func
+        - summonerName: the name of the summoner
+        - viewController: the viewController who calls this func
      */
     static func getLiveMatch(summonerName: String, viewController: ViewController) {
         league.riotAPI.getSummoner(byName: summonerName, on: .EUW) { (summoner, errorMsg) in
@@ -43,7 +49,7 @@ struct ApiCalls {
                 self.league.riotAPI.getLiveGame(by: summoner.id, on: .EUW, handler: { (gameInfo, errorMsg) in
                     if let gameInfo = gameInfo {
                         viewController.gameInfo = gameInfo
-                        print("Player is in game")             
+                        print("Player is in game")
                         DispatchQueue.main.async {
                             viewController.performSegue(withIdentifier: "segueToGameDataView", sender: self)
                         }
@@ -70,8 +76,8 @@ struct ApiCalls {
      gets the ranked stats of the summoner
      
      - Parameters:
-     - summonerId: id of the summoner
-     - viewController: viewController which calls the func
+        - summonerId: id of the summoner
+        - viewController: viewController which calls the func
      */
     static func getRankedStats(summonerId: SummonerId, viewController: UIViewController) {
         league.riotAPI.getRankedEntries(for: summonerId, on: .EUW) { (rankedEntries, errorMsg) in
@@ -106,7 +112,7 @@ struct ApiCalls {
      gets all champions and put them in a dictionary
      
      - Parameters:
-     - viewController: viewController which calls the func
+        - viewController: viewController which calls the func
      */
     static func getChampions(viewController: ViewController) {
         league.getAllChampionIds { (championIds, errorMsg) in
@@ -145,7 +151,7 @@ struct ApiCalls {
      gets all icons and put them in a dictionary
      
      - Parameters:
-     - viewController: viewController which calls the func
+        - viewController: viewController which calls the func
      */
     private static func getIcons(viewController: ViewController) {
         league.getProfileIconIds { (iconIds, errorMsg) in
@@ -184,7 +190,7 @@ struct ApiCalls {
      gets all runes and put them in a dictionary
      
      - Parameters:
-     - viewController: viewController which calls the func
+        - viewController: viewController which calls the func
      */
     private static func getRunes(viewController: ViewController) {
         league.getRunePaths { (runePaths, errorMsg) in
@@ -210,7 +216,7 @@ struct ApiCalls {
      gets all summoner spells and put them in a dictionary
      
      - Parameters:
-     - viewController: viewController which calls the func
+        - viewController: viewController which calls the func
      */
     private static func getSummonerSpells(viewController: ViewController) {
         league.getSummonerSpells { (summonerSpells, errorMsg) in

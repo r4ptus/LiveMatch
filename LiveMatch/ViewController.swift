@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 import LeagueAPI
-
+///Controller vor the SearchView
 class ViewController: UIViewController, UISearchBarDelegate {
     var summoner: Summoner?
     var gameInfo: GameInfo?
@@ -32,8 +32,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
         ApiCalls.getLiveMatch(summonerName: searchBar.text!, viewController: self)
     }
     /**
-     Limits the searchBar charachter count to 16
-     because a summoner name has only 16 characters
+        Limits the searchBar charachter count to 16
+        because a summoner name has only 16 characters
      */
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let totalCharacters = (searchBar.text?.appending(text).count ?? 0) - range.length
@@ -56,9 +56,9 @@ extension UIViewController {
      creating a toast
      
      - Parameters:
-     - controller: viewController to be displayed
-     - message: message of the toast
-     - seconds: duration of the toast
+        - controller: viewController to be displayed
+        - message: message of the toast
+        - seconds: duration of the toast
      */
     func showToast(controller: UIViewController, message: String, seconds: Double) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)

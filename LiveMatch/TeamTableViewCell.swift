@@ -8,7 +8,8 @@
 
 import UIKit
 import LeagueAPI
-
+///TableViewCell for the teams
+///each cell has 2 imageviews and a label
 class TeamTableViewCell: UITableViewCell {
     @IBOutlet var champion: UIImageView!
     @IBOutlet var icon: UIImageView!
@@ -17,9 +18,7 @@ class TeamTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
 }

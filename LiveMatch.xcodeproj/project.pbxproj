@@ -11,6 +11,24 @@
 		851E5FD422CCCD5300C83770 /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E5FD322CCCD5300C83770 /* ApiCalls.swift */; };
 		859212EE22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212ED22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift */; };
 		859212F022D0BBE60081DD67 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212EF22D0BBE60081DD67 /* TeamTableViewCell.swift */; };
+		8599D70B22D610C1004D4A74 /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E5FD322CCCD5300C83770 /* ApiCalls.swift */; };
+		8599D70C22D610C2004D4A74 /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851E5FD322CCCD5300C83770 /* ApiCalls.swift */; };
+		8599D70D22D610C4004D4A74 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C22D2322CE207900AEEE0E /* CardView.swift */; };
+		8599D70E22D610C5004D4A74 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C22D2322CE207900AEEE0E /* CardView.swift */; };
+		8599D70F22D610C8004D4A74 /* BannedChampionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212ED22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift */; };
+		8599D71022D610C8004D4A74 /* BannedChampionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212ED22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift */; };
+		8599D71122D610CA004D4A74 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212EF22D0BBE60081DD67 /* TeamTableViewCell.swift */; };
+		8599D71222D610CB004D4A74 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859212EF22D0BBE60081DD67 /* TeamTableViewCell.swift */; };
+		8599D71322D610CE004D4A74 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF522D342E8003C4F40 /* ProgressHUD.swift */; };
+		8599D71422D610CF004D4A74 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF522D342E8003C4F40 /* ProgressHUD.swift */; };
+		8599D71522D610D1004D4A74 /* RuneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */; };
+		8599D71622D610D2004D4A74 /* RuneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */; };
+		8599D71722D610D5004D4A74 /* RankedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */; };
+		8599D71822D610D5004D4A74 /* RankedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */; };
+		8599D71922D610E0004D4A74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CA822C0C21F00398107 /* ViewController.swift */; };
+		8599D71A22D610E1004D4A74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CA822C0C21F00398107 /* ViewController.swift */; };
+		8599D71B22D610E3004D4A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CA622C0C21F00398107 /* AppDelegate.swift */; };
+		8599D71C22D610E4004D4A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CA622C0C21F00398107 /* AppDelegate.swift */; };
 		859F0EF622D342E8003C4F40 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF522D342E8003C4F40 /* ProgressHUD.swift */; };
 		859F0EF822D36262003C4F40 /* RankedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */; };
 		859F0EFA22D36272003C4F40 /* RuneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */; };
@@ -30,8 +48,6 @@
 		85F66CAC22C0C21F00398107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F66CAA22C0C21F00398107 /* Main.storyboard */; };
 		85F66CAE22C0C22100398107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F66CAD22C0C22100398107 /* Assets.xcassets */; };
 		85F66CB122C0C22100398107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F66CAF22C0C22100398107 /* LaunchScreen.storyboard */; };
-		85F66CBC22C0C22100398107 /* LiveMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CBB22C0C22100398107 /* LiveMatchTests.swift */; };
-		85F66CC722C0C22100398107 /* LiveMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F66CC622C0C22100398107 /* LiveMatchUITests.swift */; };
 		A78C488388E17F8E86E10BB0 /* Pods_LiveMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695B95D990DAB353A571819E /* Pods_LiveMatchTests.framework */; };
 		FDFB6A77F560881AEE461820 /* Pods_LiveMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E78D7B63B413B18F1F25FF92 /* Pods_LiveMatch.framework */; };
 /* End PBXBuildFile section */
@@ -79,10 +95,8 @@
 		85F66CB022C0C22100398107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85F66CB222C0C22100398107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F66CB722C0C22100398107 /* LiveMatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveMatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85F66CBB22C0C22100398107 /* LiveMatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMatchTests.swift; sourceTree = "<group>"; };
 		85F66CBD22C0C22100398107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85F66CC222C0C22100398107 /* LiveMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85F66CC622C0C22100398107 /* LiveMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMatchUITests.swift; sourceTree = "<group>"; };
 		85F66CC822C0C22100398107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8E844658D337BA9F4A1F9D /* Pods-LiveMatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveMatchTests.release.xcconfig"; path = "Target Support Files/Pods-LiveMatchTests/Pods-LiveMatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		D8A28A54517B5191CF84A3F4 /* Pods-LiveMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveMatch.release.xcconfig"; path = "Target Support Files/Pods-LiveMatch/Pods-LiveMatch.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,21 +158,21 @@
 			children = (
 				85F66CA622C0C21F00398107 /* AppDelegate.swift */,
 				85F66CA822C0C21F00398107 /* ViewController.swift */,
-				85F66CAA22C0C21F00398107 /* Main.storyboard */,
-				85F66CAD22C0C22100398107 /* Assets.xcassets */,
-				85F66CAF22C0C22100398107 /* LaunchScreen.storyboard */,
-				85F66CB222C0C22100398107 /* Info.plist */,
 				85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */,
 				85DFCD6122C4D235006F440E /* PlayerDataViewController.swift */,
 				85DFCD6522C4D246006F440E /* SummonerProfileViewController.swift */,
 				851E5FD322CCCD5300C83770 /* ApiCalls.swift */,
-				85C22D2122CE19BB00AEEE0E /* CardView.xib */,
 				85C22D2322CE207900AEEE0E /* CardView.swift */,
 				859212ED22D0BBC10081DD67 /* BannedChampionsTableViewCell.swift */,
 				859212EF22D0BBE60081DD67 /* TeamTableViewCell.swift */,
 				859F0EF522D342E8003C4F40 /* ProgressHUD.swift */,
 				859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */,
 				859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */,
+				85F66CAA22C0C21F00398107 /* Main.storyboard */,
+				85F66CAD22C0C22100398107 /* Assets.xcassets */,
+				85F66CAF22C0C22100398107 /* LaunchScreen.storyboard */,
+				85F66CB222C0C22100398107 /* Info.plist */,
+				85C22D2122CE19BB00AEEE0E /* CardView.xib */,
 			);
 			path = LiveMatch;
 			sourceTree = "<group>";
@@ -166,7 +180,6 @@
 		85F66CBA22C0C22100398107 /* LiveMatchTests */ = {
 			isa = PBXGroup;
 			children = (
-				85F66CBB22C0C22100398107 /* LiveMatchTests.swift */,
 				85F66CBD22C0C22100398107 /* Info.plist */,
 			);
 			path = LiveMatchTests;
@@ -175,7 +188,6 @@
 		85F66CC522C0C22100398107 /* LiveMatchUITests */ = {
 			isa = PBXGroup;
 			children = (
-				85F66CC622C0C22100398107 /* LiveMatchUITests.swift */,
 				85F66CC822C0C22100398107 /* Info.plist */,
 			);
 			path = LiveMatchUITests;
@@ -463,9 +475,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8599D70F22D610C8004D4A74 /* BannedChampionsTableViewCell.swift in Sources */,
 				85DFCD6722C4D246006F440E /* SummonerProfileViewController.swift in Sources */,
-				85F66CBC22C0C22100398107 /* LiveMatchTests.swift in Sources */,
+				8599D71422D610CF004D4A74 /* ProgressHUD.swift in Sources */,
+				8599D70B22D610C1004D4A74 /* ApiCalls.swift in Sources */,
+				8599D71222D610CB004D4A74 /* TeamTableViewCell.swift in Sources */,
+				8599D71922D610E0004D4A74 /* ViewController.swift in Sources */,
 				85DFCD5F22C4D1D3006F440E /* GameDataViewController.swift in Sources */,
+				8599D71B22D610E3004D4A74 /* AppDelegate.swift in Sources */,
+				8599D71622D610D2004D4A74 /* RuneTableViewCell.swift in Sources */,
+				8599D70E22D610C5004D4A74 /* CardView.swift in Sources */,
+				8599D71822D610D5004D4A74 /* RankedTableViewCell.swift in Sources */,
 				85DFCD6322C4D235006F440E /* PlayerDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,10 +494,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8599D71022D610C8004D4A74 /* BannedChampionsTableViewCell.swift in Sources */,
 				85DFCD6822C4D246006F440E /* SummonerProfileViewController.swift in Sources */,
+				8599D71322D610CE004D4A74 /* ProgressHUD.swift in Sources */,
 				85DFCD6422C4D235006F440E /* PlayerDataViewController.swift in Sources */,
+				8599D70C22D610C2004D4A74 /* ApiCalls.swift in Sources */,
+				8599D71122D610CA004D4A74 /* TeamTableViewCell.swift in Sources */,
+				8599D71A22D610E1004D4A74 /* ViewController.swift in Sources */,
+				8599D71C22D610E4004D4A74 /* AppDelegate.swift in Sources */,
+				8599D71522D610D1004D4A74 /* RuneTableViewCell.swift in Sources */,
+				8599D70D22D610C4004D4A74 /* CardView.swift in Sources */,
+				8599D71722D610D5004D4A74 /* RankedTableViewCell.swift in Sources */,
 				85DFCD6022C4D1D3006F440E /* GameDataViewController.swift in Sources */,
-				85F66CC722C0C22100398107 /* LiveMatchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +665,7 @@
 			baseConfigurationReference = 54359822D07582DE9FC44270 /* Pods-LiveMatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9N959SD4Y;
 				INFOPLIST_FILE = LiveMatch/Info.plist;
@@ -646,6 +675,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = rpt.LiveMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -656,6 +686,7 @@
 			baseConfigurationReference = D8A28A54517B5191CF84A3F4 /* Pods-LiveMatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9N959SD4Y;
 				INFOPLIST_FILE = LiveMatch/Info.plist;
@@ -665,6 +696,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = rpt.LiveMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

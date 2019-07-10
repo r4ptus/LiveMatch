@@ -9,9 +9,8 @@
 import UIKit
 import LeagueAPI
 import SDWebImage
-
+///Controller for the summoner view
 class SummonerProfileViewController: UIViewController {
-
     var summoner: Summoner?
     var rankedEntries: [RankedEntry]?
     @IBOutlet var summonerIcon: UIImageView!
@@ -62,11 +61,12 @@ class SummonerProfileViewController: UIViewController {
                     break
             }
         }
-    }/**
-     share action
+    }
+    /**
+     action for the share button
      
      - Parameters:
-     - sender: UIView
+        - sender: UIView
      */
     @objc func share(sender: UIView) {
         UIGraphicsBeginImageContext(view.frame.size)

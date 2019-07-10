@@ -9,7 +9,7 @@
 import UIKit
 import LeagueAPI
 import SDWebImage
-
+///Tablesections for the tableView in PlayerDataViewController
 enum TableSections: Int {
     case rankedStats = 0
     case soloq
@@ -21,7 +21,7 @@ enum TableSections: Int {
     case masterie2
     case total
 }
-
+///Controller for the playerview
 class PlayerDataViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var summoner: Participant?
@@ -29,7 +29,6 @@ class PlayerDataViewController: UIViewController {
     var soloEntry: Bool = false
     var flex3Entry: Bool = false
     var flex5Entry: Bool = false
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -216,8 +215,8 @@ extension PlayerDataViewController: UITableViewDelegate, UITableViewDataSource {
      populates the ranked cell with data
      
      - Parameters:
-     - cell: current rankedCell
-     - entry: RankedEntry with ranked data
+        - cell: current rankedCell
+        - entry: RankedEntry with ranked data
      */
     private func populateRankedCells(cell: RankedTableViewCell, entry: RankedEntry) {
         cell.rankedImage.image = ApiCalls.tierEmblems[entry.tier.tier]
@@ -234,9 +233,9 @@ extension PlayerDataViewController: UITableViewDelegate, UITableViewDataSource {
      populates runeCell
      
      - Parameters:
-     - runePathId: id of the rune path
-     - index: current row index
-     - cell: current runeCell
+        - runePathId: id of the rune path
+        - index: current row index
+        - cell: current runeCell
      */
     private func getRunes(runePathId: RunePathId, index: Int, cell: RuneTableViewCell) {
         for runeStage in ApiCalls.runePathesDictionary[runePathId]!.runeStages {
@@ -251,8 +250,8 @@ extension PlayerDataViewController: UITableViewDelegate, UITableViewDataSource {
      populates the summoner spells
      
      - Parameters:
-     - summonerSpell: id of the summoner spell
-     - cell: current runeCell
+        - summonerSpell: id of the summoner spell
+        - cell: current runeCell
      */
     private func getSummonerSpells(summonerSpell: SummonerSpellId, cell: RuneTableViewCell) {
         cell.runeImage.sd_setImage(with: URL(string:

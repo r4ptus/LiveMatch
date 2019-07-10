@@ -7,9 +7,8 @@
 //
 
 import UIKit
-
+///Custom view for displaying ranked data
 @IBDesignable class CardView: UIView {
-    
     @IBOutlet var view: UIView!
     @IBOutlet var queueType: UILabel!
     @IBOutlet var rank: UILabel!
@@ -58,7 +57,7 @@ import UIKit
      Initializes a new CardView
      
      - Parameters:
-     frame: CGRect
+        - frame: CGRect
      
      - Returns: a CardView
      */
@@ -70,7 +69,7 @@ import UIKit
      Initializes a new CardView from code
      
      - Parameters:
-     coder aDecoder: NSCoder
+        - coder aDecoder: NSCoder
      
      - Returns: a CardView
      */

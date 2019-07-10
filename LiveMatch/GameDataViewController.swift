@@ -8,13 +8,19 @@
 
 import UIKit
 import LeagueAPI
-
+///Controller for the game data
 class GameDataViewController: UIViewController {
+    ///LeagueApi GameInfo
     var gameInfo: GameInfo?
+    ///Array of LeagueApi Participant
     var teamBlue: [Participant]?
+    ///Array of LeagueApi Participant
     var teamRed: [Participant]?
+    ///Array of LeagueApi BannedChampion
     var bannedCBlue: [BannedChampion]?
+    ///Array of LeagueApi BannedChampion
     var bannedCRed: [BannedChampion]?
+    ///LeagueApi PArticipant to pass with the segue
     var participantToPass: Participant?
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
@@ -156,11 +162,11 @@ extension GameDataViewController: UITableViewDelegate, UITableViewDataSource {
      populate the team cell with data
      
      - Parameters:
-     - team: an array of participants
-     - index: index of the current row
-     - cell: current cell
+        - team: an array of participants
+        - index: index of the current row
+        - cell: current cell
      */
-    private func populateTeamCell(team: [Participant], index: Int, cell: TeamTableViewCell) {
+    func populateTeamCell(team: [Participant], index: Int, cell: TeamTableViewCell) {
         cell.name.text = team[index].summonerName
         cell.icon.sd_setImage(with:
             URL(string: ApiCalls.profileIcons[team[index].profileIconId]!.profileIcon.url),

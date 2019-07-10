@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+///TableViewCell for the banned champions
+///has five imageViews
 class BannedChampionsTableViewCell: UITableViewCell {
     @IBOutlet var champion1: UIImageView!
     @IBOutlet var champion2: UIImageView!
@@ -17,7 +18,6 @@ class BannedChampionsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

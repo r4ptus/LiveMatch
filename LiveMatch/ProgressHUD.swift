@@ -7,14 +7,13 @@
 //
 
 import UIKit
-
+///Loadingspinner with text
 class ProgressHUD: UIVisualEffectView {
     var text: String? {
         didSet {
             label.text = text
         }
     }
-
     let activityIndictor: UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
     let label: UILabel = UILabel()
     let blurEffect = UIBlurEffect(style: .light)
@@ -23,7 +22,7 @@ class ProgressHUD: UIVisualEffectView {
      Initializes a new ProgressHUD in the inspector
      
      - Parameters:
-     - text: text which is shown on the ProgressHUD
+        - text: text which is shown on the ProgressHUD
      
      - Returns: A ProgressHUD
      */
@@ -37,7 +36,7 @@ class ProgressHUD: UIVisualEffectView {
      Initializes a new ProgressHUD programatically
      
      - Parameters:
-     - coder aDecoder: NSCoder
+        - coder aDecoder: NSCoder
      
      - Returns: a ProgressHUD
      */

@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
         <!--Summoner Profile View Controller-->
         <scene sceneID="ZfC-5L-tkf">
             <objects>
-                <viewController id="rEi-cV-Lnh" customClass="SummonerProfileViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SummonerProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rEi-cV-Lnh" customClass="SummonerProfileViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="Vm2-OA-58k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
         <!--Player Data View Controller-->
         <scene sceneID="bXb-jQ-kEB">
             <objects>
-                <viewController id="gyM-Wo-fU2" customClass="PlayerDataViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gyM-Wo-fU2" customClass="PlayerDataViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zh5-BI-3Ek">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="2560.8695652173915" y="84.375"/>
         </scene>
-        <!--Game Data View Controller-->
+        <!--GameDataViewController-->
         <scene sceneID="rpi-TH-m3e">
             <objects>
-                <viewController id="lRC-eq-cFs" customClass="GameDataViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameDataViewController" title="GameDataViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lRC-eq-cFs" customClass="GameDataViewController" customModule="LiveMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6k8-bm-Aml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
