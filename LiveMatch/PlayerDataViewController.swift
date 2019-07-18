@@ -34,7 +34,7 @@ class PlayerDataViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-        self.title = "\(summoner!.summonerName)"
+        self.title = "\(summoner?.summonerName ?? "SummonerName")" 
         checkRankedEntry()
         ApiCalls.getRankedStats(summonerId: summoner!.summonerId!, viewController: self)
     }

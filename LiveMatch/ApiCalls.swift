@@ -128,22 +128,14 @@ struct ApiCalls {
                             }
                         } else {
                             print("Request failed cause: \(errorMsg ?? "No error description")")
-                            DispatchQueue.main.async {
-                                viewController.showToast(controller: viewController.self,
-                                                         message:
-                                    "Request failed cause: \(errorMsg ?? "No error description")",
-                                    seconds: 15)
-                            }
+                            viewController.showAlert(errorMsg:
+                                "Request failed cause: \(errorMsg ?? "No error description")")
                         }
                     })
                 }
             } else {
                 print("Request failed cause: \(errorMsg ?? "No error description")")
-                DispatchQueue.main.async {
-                    viewController.showToast(controller: viewController.self,
-                                             message: "Request failed cause: \(errorMsg ?? "No error description")",
-                        seconds: 15)
-                }
+                viewController.showAlert(errorMsg: "Request failed cause: \(errorMsg ?? "No error description")")
             }
         }
     }
@@ -167,22 +159,14 @@ struct ApiCalls {
                             }
                         } else {
                             print("Request failed cause: \(errorMsg ?? "No error description")")
-                            DispatchQueue.main.async {
-                                viewController.showToast(controller: viewController.self,
-                                                         message:
-                                    "Request failed cause:\(errorMsg ?? "No error description")",
-                                    seconds: 15)
-                            }
+                            viewController.showAlert(errorMsg:
+                                "Request failed cause: \(errorMsg ?? "No error description")")
                         }
                     })
                 }
             } else {
                 print("Request failed cause: \(errorMsg ?? "No error description")")
-                DispatchQueue.main.async {
-                    viewController.showToast(controller: viewController.self,
-                                             message: "Request failed cause: \(errorMsg ?? "No error description")",
-                        seconds: 15)
-                }
+                viewController.showAlert(errorMsg: "Request failed cause: \(errorMsg ?? "No error description")")
             }
         }
     }
@@ -203,11 +187,7 @@ struct ApiCalls {
                 getSummonerSpells(viewController: viewController)
             } else {
                 print("Request failed cause: \(errorMsg ?? "No error description")")
-                DispatchQueue.main.async {
-                    viewController.showToast(controller: viewController.self,
-                                             message: "Request failed cause: \(errorMsg ?? "No error description")",
-                        seconds: 15)
-                }
+                viewController.showAlert(errorMsg: "Request failed cause: \(errorMsg ?? "No error description")")
             }
         }
     }
@@ -232,11 +212,7 @@ struct ApiCalls {
                 }
             } else {
                 print("Request failed cause: \(errorMsg ?? "No error description")")
-                DispatchQueue.main.async {
-                    viewController.showToast(controller: viewController.self,
-                                             message: "Request failed cause: \(errorMsg ?? "No error description")",
-                        seconds: 15)
-                }
+                viewController.showAlert(errorMsg: "Request failed cause: \(errorMsg ?? "No error description")")
             }
         }
     }

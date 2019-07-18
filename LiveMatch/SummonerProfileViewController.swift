@@ -22,7 +22,7 @@ class SummonerProfileViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain,
                                                             target: self, action: #selector(share(sender:)))
-        summonerName.text = summoner!.name
+        summonerName.text = summoner?.name ?? "SummonerName"
         flex5Ranked.queueType.text = "Flex 5"
         soloQRank.queueType.text = "Solo Q"
         flex3Rank.queueType.text = "Flex 3"

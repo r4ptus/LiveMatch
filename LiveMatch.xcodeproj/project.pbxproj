@@ -32,6 +32,11 @@
 		859F0EF622D342E8003C4F40 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF522D342E8003C4F40 /* ProgressHUD.swift */; };
 		859F0EF822D36262003C4F40 /* RankedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */; };
 		859F0EFA22D36272003C4F40 /* RuneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */; };
+		85B5869E22E0A59200665819 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5869D22E0A59200665819 /* ViewControllerTest.swift */; };
+		85B586A022E0A6BB00665819 /* GameDataViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B5869F22E0A6BB00665819 /* GameDataViewControllerTest.swift */; };
+		85B586A222E0A7F500665819 /* PlayerDataViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B586A122E0A7F500665819 /* PlayerDataViewControllerTest.swift */; };
+		85B586A422E0A99E00665819 /* SummonerProfileViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B586A322E0A99E00665819 /* SummonerProfileViewControllerTest.swift */; };
+		85B586A622E0AB4700665819 /* CardViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B586A522E0AB4700665819 /* CardViewTest.swift */; };
 		85C22D2222CE19BB00AEEE0E /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85C22D2122CE19BB00AEEE0E /* CardView.xib */; };
 		85C22D2422CE207900AEEE0E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C22D2322CE207900AEEE0E /* CardView.swift */; };
 		85DFCD5E22C4D1D3006F440E /* GameDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */; };
@@ -82,6 +87,11 @@
 		859F0EF522D342E8003C4F40 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		859F0EF722D36262003C4F40 /* RankedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankedTableViewCell.swift; sourceTree = "<group>"; };
 		859F0EF922D36272003C4F40 /* RuneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuneTableViewCell.swift; sourceTree = "<group>"; };
+		85B5869D22E0A59200665819 /* ViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTest.swift; sourceTree = "<group>"; };
+		85B5869F22E0A6BB00665819 /* GameDataViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataViewControllerTest.swift; sourceTree = "<group>"; };
+		85B586A122E0A7F500665819 /* PlayerDataViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataViewControllerTest.swift; sourceTree = "<group>"; };
+		85B586A322E0A99E00665819 /* SummonerProfileViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerProfileViewControllerTest.swift; sourceTree = "<group>"; };
+		85B586A522E0AB4700665819 /* CardViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTest.swift; sourceTree = "<group>"; };
 		85C22D2122CE19BB00AEEE0E /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		85C22D2322CE207900AEEE0E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		85DFCD5D22C4D1D3006F440E /* GameDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +191,11 @@
 			isa = PBXGroup;
 			children = (
 				85F66CBD22C0C22100398107 /* Info.plist */,
+				85B5869D22E0A59200665819 /* ViewControllerTest.swift */,
+				85B5869F22E0A6BB00665819 /* GameDataViewControllerTest.swift */,
+				85B586A122E0A7F500665819 /* PlayerDataViewControllerTest.swift */,
+				85B586A322E0A99E00665819 /* SummonerProfileViewControllerTest.swift */,
+				85B586A522E0AB4700665819 /* CardViewTest.swift */,
 			);
 			path = LiveMatchTests;
 			sourceTree = "<group>";
@@ -364,7 +379,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		93F2D29FA393D62116573AA5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -477,13 +492,18 @@
 			files = (
 				8599D70F22D610C8004D4A74 /* BannedChampionsTableViewCell.swift in Sources */,
 				85DFCD6722C4D246006F440E /* SummonerProfileViewController.swift in Sources */,
+				85B5869E22E0A59200665819 /* ViewControllerTest.swift in Sources */,
 				8599D71422D610CF004D4A74 /* ProgressHUD.swift in Sources */,
+				85B586A222E0A7F500665819 /* PlayerDataViewControllerTest.swift in Sources */,
 				8599D70B22D610C1004D4A74 /* ApiCalls.swift in Sources */,
+				85B586A622E0AB4700665819 /* CardViewTest.swift in Sources */,
 				8599D71222D610CB004D4A74 /* TeamTableViewCell.swift in Sources */,
 				8599D71922D610E0004D4A74 /* ViewController.swift in Sources */,
+				85B586A422E0A99E00665819 /* SummonerProfileViewControllerTest.swift in Sources */,
 				85DFCD5F22C4D1D3006F440E /* GameDataViewController.swift in Sources */,
 				8599D71B22D610E3004D4A74 /* AppDelegate.swift in Sources */,
 				8599D71622D610D2004D4A74 /* RuneTableViewCell.swift in Sources */,
+				85B586A022E0A6BB00665819 /* GameDataViewControllerTest.swift in Sources */,
 				8599D70E22D610C5004D4A74 /* CardView.swift in Sources */,
 				8599D71822D610D5004D4A74 /* RankedTableViewCell.swift in Sources */,
 				85DFCD6322C4D235006F440E /* PlayerDataViewController.swift in Sources */,

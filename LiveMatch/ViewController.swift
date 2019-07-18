@@ -50,6 +50,39 @@ class ViewController: UIViewController, UISearchBarDelegate {
             spvc.summoner = summoner
         }
     }
+    /**
+     reloading the ViewController
+     */
+    func restartApplication () {
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "ViewController") as? ViewController else { return }
+        let navCtrl = UINavigationController(rootViewController: viewController)
+        guard
+            let window = UIApplication.shared.keyWindow,
+            let rootViewController = window.rootViewController
+            else {
+                return
+        }
+        navCtrl.view.frame = rootViewController.view.frame
+        navCtrl.view.layoutIfNeeded()
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = navCtrl
+        })
+    }
+    /**
+     Shows an alert with the reload action
+     */
+    func showAlert(errorMsg: String) {
+        let alert = UIAlertController(title: "", message: errorMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: { _ in
+            DispatchQueue.main.async {
+                self.restartApplication()
+            }
+        }))
+        DispatchQueue.main.async {
+            self.present( alert, animated: true, completion: nil)
+        }
+    }
 }
 extension UIViewController {
     /**
