@@ -66,7 +66,7 @@ struct ApiCalls {
                 DispatchQueue.main.async {
                     viewController.showToast(controller: viewController.self,
                                              message: "Request failed cause: \(errorMsg ?? "No error description")",
-                        seconds: 15)
+                        seconds: 5)
                     viewController.progressHUD?.hide()
                 }
             }
@@ -102,7 +102,7 @@ struct ApiCalls {
                 DispatchQueue.main.async {
                     viewController.showToast(controller: viewController.self,
                                              message: "Request failed cause: \(errorMsg ?? "No error description")",
-                        seconds: 15)
+                        seconds: 5)
                 }
             }
         }
